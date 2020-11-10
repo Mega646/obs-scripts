@@ -1,7 +1,6 @@
 import obspython as obs
 
 text_source_name = ""
-text_within_source = ""
 
 def update_text():
     song = get_active_song()
@@ -9,7 +8,6 @@ def update_text():
     settings = obs.obs_data_create()
     text_source = obs.obs_get_source_by_name(text_source_name)
     if text_source is not None:
-        print(song_name)
         settings = obs.obs_data_create()
         obs.obs_data_set_string(settings, "text", song_name)
         obs.obs_source_update(text_source, settings)
